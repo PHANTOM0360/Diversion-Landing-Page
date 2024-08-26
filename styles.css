@@ -60,7 +60,7 @@ body, html {
 .circle {
     width: 1000px;
     height: 1000px;
-    background-color: white;
+    
     border-radius: 50%;
     position: relative;
     top: -50%; /* Adjust to position the circle */
@@ -70,6 +70,15 @@ body, html {
     align-items: center;
     justify-content: center;
     z-index: 0;
+    animation: rotate 20s linear infinite;
+}
+@keyframes rotate {
+    from {
+        transform: translate(-51%, 70%) rotate(0deg);
+    }
+    to {
+        transform: translate(-51%, 70%) rotate(360deg);
+    }
 }
 
 /* Image inside the circle */
@@ -102,8 +111,8 @@ body, html {
     }
 
     .circle {
-        width: 480px;
-        height: 480px;
+        width: 420px;
+        height: 420px;
         top: 100%;
     }
    .grid-image{
@@ -114,6 +123,6 @@ body, html {
        object-fit: contain;
     }
     .moon-image {
-        max-width: 102%;
+        max-width: 100%;
     }
 }
