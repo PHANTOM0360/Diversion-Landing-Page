@@ -1,0 +1,119 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Center the logo section */
+.logo-section {
+    position: absolute;
+    top: 40%; /* Adjust this value to move the logo up/down */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+}
+
+.logo {
+    max-width: 50%;
+    height: auto;
+}
+
+/* Grid section to follow logo, you can style this as needed */
+.grid-section {
+    max-width: 100%;
+    height: 90vh;
+    background-color: black;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 0%;
+    z-index: 2;
+}
+
+/* Circle container to position the circle and images */
+.circle-container {
+    position: relative;
+    text-align: center;
+}
+
+/* Circle styling */
+.circle {
+    width: 1000px;
+    height: 1000px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    top: -50%; /* Adjust to position the circle */
+    left: 50%;
+    transform: translate(-51%, 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+}
+
+/* Image inside the circle */
+.grid-image {
+    position: relative;
+    top: -17%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Top image positioned above the circle */
+.moon-image {
+    position: absolute;
+    z-index: 1;
+    width: 120%;
+    height: auto;
+    margin-bottom: 20px; /* Adjust spacing between the image and the circle */
+}
+
+/* Responsive design adjustments */
+@media screen and (max-width: 768px) {
+    .logo-section{
+        position: absolute;
+        transform: translate(-50%, -100%);
+    }
+    .grid-section {
+        height: 50vh;
+        max-width: 100%;
+    }
+
+    .circle {
+        width: 480px;
+        height: 480px;
+        top: 100%;
+    }
+   .grid-image{
+       position: relative;
+       top: -33%;
+       width: 100%;
+        height: 100%;
+       object-fit: contain;
+    }
+    .moon-image {
+        max-width: 102%;
+    }
+}
