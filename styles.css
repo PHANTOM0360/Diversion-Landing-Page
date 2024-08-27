@@ -41,13 +41,14 @@ body, html {
     width: 100%;
     height: 90vh;
     background-color: black;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
+    position: relative; /* Ensure the section is not absolute */
+    top: 0; /* Start from the top */
+    margin-top: -500px; /* Adjust this value to pull it up */
     display: flex;
-    align-items: flex-start; /* Align items to the top */
+    align-items: flex-start;
     justify-content: center;
     overflow: hidden;
+    z-index: 2;
 }
 
 /* Grid section */
@@ -70,6 +71,8 @@ body, html {
 .circle-container {
     position: relative;
     text-align: center;
+    z-index: 1;
+    margin-top: 30%;
 }
 
 /* Circle styling */
@@ -77,23 +80,22 @@ body, html {
     width: 1200px;
     height: 1000px;
     border-radius: 50%;
-    position: relative;
-    top: -50%; /* Adjust to position the circle */
-    left: 50%;
-    transform: translate(-51%, 70%);
+    position: relative; /* Use absolute positioning for precise placement */
+    top: 0%; /* Center vertically */
+    left: 18%; /* Center horizontally */
+     /* Adjust to truly center */
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
-    animation: rotate 20s linear infinite;
+    
 }
 
-@keyframes rotate {
+@keyframes spinMoon {
     from {
-        transform: translate(-51%, 70%) rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-        transform: translate(-51%, 70%) rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -104,27 +106,59 @@ body, html {
     width: 100%;
     height: auto;
     margin-bottom: 20px; /* Adjust spacing between the image and the circle */
+    
 }
+
+
+
+
+
+
+
 
 /* Responsive design adjustments */
 @media screen and (min-width: 480px) and (max-width: 1200px) {
     .logo-section {
         position: absolute;
-        transform: translate(-50%, -100%);
+        transform: translate(-48%, -100%);
     }
 
     .sub-section {
-        height: 50vh;
         width: 100%;
+        height: 90vh;
+        background-color: black;
+        position: relative; /* Ensure the section is not absolute */
+        top: 0; /* Start from the top */
+        margin-top: 0px; /* Adjust this value to pull it up */
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        overflow: hidden;
+        z-index: 2;
     }
-
+    .circle-container {
+        position: relative;
+        text-align: center;
+        z-index: 1;
+        margin-top: 110%;
+    }
     .circle {
-        width: 420px;
-        height: 420px;
-        top: 100%;
+        width:auto;
+        height: auto;
+        justify-content: center;
+        background-color: white;
+        position: relative; /* Use absolute positioning for precise placement */
+        top: 0%; /* Center vertically */
+        left: 0%; /* Center horizontally */
+         /* Adjust to truly center */
+         display: flex;
+         align-items: center;
+        justify-content: center;
     }
 
     .moon-image {
+        position: absolute;
         max-width: 90%;
+        
     }
 }
